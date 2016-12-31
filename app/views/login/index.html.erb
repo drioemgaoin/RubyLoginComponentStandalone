@@ -1,0 +1,27 @@
+<div class="login">
+  <h2>Log in</h2>
+
+  <%= form_tag("/login", method: "post") do %>
+    <%= email_field_tag(:email) %>
+    <%= password_field_tag(:password) %>
+    <%= submit_tag("Log in") %>
+    <p class="text-center text-muted">
+      <small>Don't have an account yet? <a href="/signup">Sign up</a></small>
+    </p>
+  <% end %>
+
+  <div class="signup-or-separator">
+    <h6 class="text">or</h6>
+    <hr>
+  </div>
+
+  <%= link_to_login_with "Facebook", "/auth/facebook", { width: '460', height: '460' } %>
+  <!-- <%= button_to "Sign in with Facebook",
+          { controller: :login, action: :authenticate, :provider => 'facebook', :redirectUri => '/' },
+          { class: "btn btn-facebook" } %> -->
+
+  <%= button_to "Sign in with Google",
+          { controller: :login, action: :authenticate, :provider => 'google' },
+          { class: "btn btn-google" } %>
+
+</div>
