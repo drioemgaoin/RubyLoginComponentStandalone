@@ -24,6 +24,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jwt'
 gem 'httpclient'
 
+gem 'devise'
+gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 

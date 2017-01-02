@@ -1,26 +1,16 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  before_filter :ensure_signup_complete, only: [:new, :create, :update, :destroy]
+  before_action :authenticate_user!, :only => [:index]
 
-  private
+  def ensure_signup_complete
+    # Ensure we don't go into an infinite loop
+    return if action_name == 'finish_signup'
 
-  def authenticate_user!
-    unauthorized! unless current_user
-  end
-
-  def unauthorized!
-    head :unauthorized
-  end
-
-  def current_user
-    @current_user
-  end
-
-  def set_current_user
-    token = request.headers['Authorization'].to_s.split(' ').last
-    return unless token
-
-    payload = Token.new(token)
-
-    @current_user = User.find(payload.user_id) if payload.valid?
+    # Redirect to the 'finish_signup' page if the user
+    # email hasn't been verified yet
+    if current_user && !current_user.email_verified?
+      redirect_to finish_signup_path(current_user)
+    end
   end
 end
