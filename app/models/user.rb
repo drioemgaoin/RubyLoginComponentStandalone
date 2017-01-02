@@ -52,4 +52,9 @@ class User < ApplicationRecord
   def email_verified?
     self.email && self.email !~ TEMP_EMAIL_REGEX
   end
+
+  # def send_devise_notification(notification, *args)
+  #   puts "EMAIL SENT-------------"
+  #   devise_mailer.send(notification, self, *args).deliver_later
+  # end
 end
