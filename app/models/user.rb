@@ -11,7 +11,6 @@ class User < ApplicationRecord
   validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
 
   def self.find_for_oauth(auth, signed_in_resource = nil)
-
     identity = Identity.find_for_oauth(auth)
 
     # If a signed_in_resource is provided it always overrides the existing user
@@ -52,9 +51,4 @@ class User < ApplicationRecord
   def email_verified?
     self.email && self.email !~ TEMP_EMAIL_REGEX
   end
-
-  # def send_devise_notification(notification, *args)
-  #   puts "EMAIL SENT-------------"
-  #   devise_mailer.send(notification, self, *args).deliver_later
-  # end
 end
