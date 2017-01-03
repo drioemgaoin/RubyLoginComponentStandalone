@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_filter :ensure_signup_complete, only: [:new, :create, :update, :destroy]
+  before_filter :ensure_signup_complete
   before_action :authenticate_user!
 
   def ensure_signup_complete
