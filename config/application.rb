@@ -18,5 +18,19 @@ module RubyMvcBoilerplate
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance|
+      unless html_tag =~ /^<label/
+        %{
+          <div class="has-error">
+            #{html_tag}
+            <span class="form-control-feedback"></span>
+            <div class="help-block">#{instance.object.class.human_attribute_name(instance.send(:tag_id))} #{instance.error_message.first}</div>
+          </div>
+        }.html_safe
+      else
+        %{#{html_tag}}.html_safe
+      end
+    }
   end
 end

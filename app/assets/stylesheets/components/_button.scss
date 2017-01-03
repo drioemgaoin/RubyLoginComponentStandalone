@@ -13,7 +13,11 @@
 .btn-primary {
   color: #fff;
   background-color: #4285f4;
-  border-color: #357ebd;
+  border: 1px solid #357ebd;
+}
+
+.btn-primary:hover {
+  background-color: #285e8e;
 }
 
 .btn-facebook {
@@ -43,7 +47,7 @@
 .btn-success {
   color: #fff;
   background-color: #5cb85c;
-  border-style: none;
+  border: 1px solid #4cae4c;
 }
 
 .btn-success:hover {

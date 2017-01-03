@@ -1,4 +1,5 @@
 .signup {
+  margin: auto;
   display: flex;
   flex-direction: column;
   border: 0;
@@ -16,19 +17,27 @@
   div {
     display: flex;
     flex-direction: column;
-    align-self: center;
     position: relative;
+
+    &#error_explanation {
+      margin-bottom: 30px;
+    }
+
+    &:not(:first-of-type) {
+      margin-top: 10px;
+    }
 
     input {
       height: 40px;
-
-      &:nth-child(1) {
-        margin-top: 10px;
-      }
     }
   }
 
-  .btn {
+  .inline {
+    display: inline-block;
+    align-self: stretch;
+  }
+
+  .input[type=submit] {
     height: 40px;
     width: 300px;
     border-style: none;
