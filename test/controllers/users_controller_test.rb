@@ -58,11 +58,4 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert :success
     assert_not_nil assigns(:show_errors)
   end
-
-  test "should destroy user" do
-    confirm_email(:john, "johndoe@domain.com")
-
-    delete '/users/logout'
-    assert_redirected_to root_url
-  end
 end
