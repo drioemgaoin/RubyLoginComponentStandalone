@@ -21,13 +21,16 @@ module RubyMvcBoilerplate
 
     config.action_view.field_error_proc = Proc.new { |html_tag, instance|
       unless html_tag =~ /^<label/
+        error_messages = instance.error_message.each.map { |message| "<li>#{instance.object.class.human_attribute_name(instance.send(:tag_id))} #{message}" }.join('</li>')
         %{
-          <div class="has-error">
-            #{html_tag}
-            <span class="form-control-feedback"></span>
-            <div class="help-block">#{instance.object.class.human_attribute_name(instance.send(:tag_id))} #{instance.error_message.first}</div>
-          </div>
-        }.html_safe
+           <div class="has-error">
+             #{html_tag}
+             <span class="form-control-feedback"></span>
+             <div class="help-block">
+              <ul>#{error_messages}</ul>
+            </div>
+           </div>
+         }.html_safe
       else
         %{#{html_tag}}.html_safe
       end

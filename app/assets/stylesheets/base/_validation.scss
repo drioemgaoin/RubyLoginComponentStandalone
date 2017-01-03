@@ -27,5 +27,10 @@
   > .help-block {
     color: #a94442;
     padding: 10px 0px;
+
+    > ul {
+      margin: 0;
+      padding-left: 20px;
+    }
   }
 }
