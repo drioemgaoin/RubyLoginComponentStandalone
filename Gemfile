@@ -25,7 +25,10 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+
 gem "font-awesome-rails"
+
+gem "password_strength"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
