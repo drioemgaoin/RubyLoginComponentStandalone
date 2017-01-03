@@ -6,7 +6,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, and :timeoutable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, :omniauth_providers => [:facebook]
+         :omniauthable, :omniauth_providers => [:facebook, :google_oauth2]
 
   validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
   validates_strength_of :password, :with => :email, on: [:new, :edit, :create]
