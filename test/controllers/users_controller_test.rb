@@ -38,32 +38,29 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
       }
     })
 
-    post '/users/auth/facebook/callback'
-    follow_redirect!
+    log_in()
   end
 
   def teardown
     current_user = assigns(:current_user)
     if !current_user.nil?
-      puts 'LOG OUT ------'
-      delete '/users/logout'
-      follow_redirect!
+      log_out()
     end
   end
 
   test "should redirect to root_url if user confirmed his email" do
-    patch "/users/#{users(:john).id}/finish_signup", params: { user: { email: "johndoe@domain.com" }}
+    confirm_email(:john, "johndoe@domain.com")
     assert_redirected_to root_url
   end
 
   test "should show errors if user didn't confirm his email" do
-    patch "/users/#{users(:john).id}/finish_signup", params: { user: { email: '' }}
+    confirm_email(:john, "")
     assert :success
     assert_not_nil assigns(:show_errors)
   end
 
   test "should destroy user" do
-    patch "/users/#{users(:john).id}/finish_signup", params: { user: { email: "johndoe@domain.com" }}
+    confirm_email(:john, "johndoe@domain.com")
 
     delete '/users/logout'
     assert_redirected_to root_url
