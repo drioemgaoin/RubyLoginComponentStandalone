@@ -1,23 +1,19 @@
 class UsersController < ActionController::Base
-  before_action :set_user, only: [:destroy, :finish_signup]
 
   def finish_signup
     if request.patch? && params[:user]
-      if @user.update(user_params)
-        @user.skip_reconfirmation! if @user.respond_to?(:skip_reconfirmation)
-        bypass_sign_in(@user)
+      if current_user.update(user_params)
+        current_user.skip_reconfirmation! if current_user.respond_to?(:skip_reconfirmation)
+        bypass_sign_in(current_user)
         redirect_to root_url, notice: 'Your profile was successfully updated.'
-      else
-        @show_errors = true
+        return
       end
     end
+
+    render "finish_signup", :layout => "application"
   end
 
   private
-    def set_user
-      @user = User.find(params[:id])
-    end
-
     def user_params
       accessible = [ :name, :email ]
       accessible << [ :password, :password_confirmation ] unless params[:user][:password].blank?

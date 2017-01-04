@@ -4,7 +4,30 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-john: {
+user_unconfirmed: {
   id: 1,
-  email: "johndoe@domain.com"
+  email: "change@me-10154233289753182-facebook.com",
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>,
+  sign_in_count: 1,
+  current_sign_in_at: '2017-01-04 12:47:18.743148',
+  last_sign_in_at: '2017-01-04 12:47:18.743148',
+  current_sign_in_ip: 1,
+  last_sign_in_ip: 1,
+  created_at: '2017-01-04 12:47:18.729882',
+  updated_at: '2017-01-04 12:47:18.743966',
+  name: 'John Doe'
+}
+
+user_confirmed: {
+  id: 2,
+  email: "johndoe@domain.com",
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>,
+  sign_in_count: 1,
+  current_sign_in_at: '2017-01-04 12:47:18.743148',
+  last_sign_in_at: '2017-01-04 12:47:18.743148',
+  current_sign_in_ip: 1,
+  last_sign_in_ip: 1,
+  created_at: '2017-01-04 12:47:18.729882',
+  updated_at: '2017-01-04 12:47:18.743966',
+  name: 'John Doe'
 }
