@@ -1,4 +1,5 @@
 class UsersController < ActionController::Base
+  protect_from_forgery
 
   def finish_signup
     if request.patch? && params[:user]
