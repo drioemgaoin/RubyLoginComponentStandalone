@@ -61,13 +61,12 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_url_options = { host: config.app_domain, port: 7000 }
   config.action_mailer.smtp_settings = {
-    address: 'smtp.live.com',
+    address: 'smtp.gmail.com',
     port: '587',
     enable_starttls_auto: true,
-    user_name: 'romain_diegoni@hotmail.com',
-    password: 'yourpassword',
+    user_name: ENV["GMAIL_USERNAME"],
+    password: ENV["GMAIL_PASSWORD"],
     authentication: :plain,
-    domain: 'mail.live.com',
-    enable_starttls_auto: true
+    domain: 'gmail.com'
   }
 end
