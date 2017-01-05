@@ -43,7 +43,7 @@
  * Shamelessly borrowed from HTML5Boilerplate:
  * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
  */
-.visually-hidden { 
+.visually-hidden {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -52,4 +52,24 @@
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+.signup-or-separator {
+  margin: 10px 0px;
+  height: 34px;
+  text-align: center;
+  background: none;
+
+  .text {
+    display: inline-block;
+    padding: 8px;
+    margin: 0;
+    background-color: #fff;
+  }
+
+  hr {
+    width: 90%;
+    margin: -16px auto 10px auto;
+    border-top: 1px solid #dce0e0;
+  }
 }

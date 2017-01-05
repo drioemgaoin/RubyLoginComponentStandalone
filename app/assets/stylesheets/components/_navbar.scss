@@ -1,12 +1,15 @@
 .navbar {
-  border: 0;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+  -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+  height: 50px;
+  width: 100%;
+  position: fixed;
   display:flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   background-color: #fff;
-  height: 50px;
 
   li {
     list-style: none;

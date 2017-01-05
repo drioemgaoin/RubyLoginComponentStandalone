@@ -1,27 +1,30 @@
-<div class="login">
+<div class="vcontainer login">
   <h2>Log in</h2>
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => { :class => "internal-account" }) do |f| %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => { :class => "" }) do |f| %>
     <%= render "partials/error" %>
 
-    <div>
+    <div class="field column">
       <%= f.label :email %>
       <%= f.email_field :email, autofocus: true %>
     </div>
 
-    <div>
+    <div class="field column">
       <%= f.label :password %>
       <%= f.password_field :password, autocomplete: "off" %>
     </div>
 
     <% if devise_mapping.rememberable? %>
-      <div class="inline">
+      <div class="field row">
         <%= f.check_box :remember_me %>
         <%= f.label :remember_me %>
       </div>
     <% end %>
 
-    <%= f.submit "Log in", :class => "btn btn-success" %>
+    <div class="action column">
+      <%= f.submit "Log in", :class => "btn btn-success" %>
+    </div>
+
     <p class="text-center text-muted">
       <small>Don't have an account yet? <%= link_to "Sign up", new_registration_path(resource_name) %></small><br />
       <small>Forget your password? <%= link_to "Forgot your password", new_password_path(resource_name) %></small><br />
@@ -37,10 +40,10 @@
   </div>
 
   <%- if devise_mapping.omniauthable? %>
-    <div class="other-account">
+    <div class="action column">
       <% resource_class.omniauth_providers.each do |provider| %>
         <%= link_to omniauth_authorize_path(resource_name, provider), :class => "btn btn-#{display_provider_name(provider)}" do %>
-          <i class="icon-ok icon-white"></i> Sign in with <%= display_provider_name(provider).camelcase %>
+          Sign in with <%= display_provider_name(provider).camelcase %>
         <% end %>
       <% end %>
     </div>

@@ -1,102 +1,19 @@
 .login {
-  margin: auto;
-  align-self: center;
-  display: flex;
-  flex-direction: column;
-  border: 0;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
-  background: #fff;
-  margin-top: 10px;
-  width: 330px;
-  padding: 10px;
+  padding: 90px 10px 10px 10px;
 
   h2 {
-    display: flex;
-    align-self: center;
-  }
-
-  .other-account {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
     text-align: center;
-
-    a {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .btn,
-    a {
-      height: 40px;
-      width: 300px;
-      border-style: none;
-      border-radius: 3px;
-
-      &:nth-child(2) {
-        margin-top: 10px;
-      }
-    }
   }
 
-  .signup-or-separator {
-    margin: 10px 0px;
-    height: 34px;
-    text-align: center;
-    background: none;
+  @media (min-width: 550px) {
+    width: 80%;
   }
 
-  .signup-or-separator hr {
-    width: 90%;
-    margin: -16px auto 10px auto;
-    border-top: 1px solid #dce0e0;
+  @media (min-width: 750px) {
+    width: 50%;
   }
 
-  .signup-or-separator .text {
-    display: inline-block;
-    padding: 8px;
-    margin: 0;
-    background-color: #fff;
-  }
-
-  .internal-account {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-
-    div {
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-
-      input {
-        height: 40px;
-      }
-
-      &:not(:first-of-type) {
-        margin-top: 10px;
-      }
-
-      &.inline {
-        display: inline-block;
-
-        input {
-            vertical-align: middle;
-        }
-
-        label {
-          margin-left: 5px;
-        }
-      }
-    }
-
-    button,
-    input[type=submit] {
-      align-self: center;
-      margin-top: 15px;
-      height: 40px;
-      width: 300px;
-    }
+  @media (min-width: 1000px) {
+    width: 30%;
   }
 }
