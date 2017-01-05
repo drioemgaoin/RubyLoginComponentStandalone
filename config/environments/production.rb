@@ -85,13 +85,13 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # General Settings
-  config.app_domain = 'localhost'
+  config.app_domain = ENV['APP_DOMAIN']
 
   # Email
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = { host: config.app_domain, port: 7000 }
+  config.action_mailer.default_url_options = { host: config.app_domain }
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
     port: '587',
