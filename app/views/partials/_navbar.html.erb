@@ -1,15 +1,16 @@
-<div class="navbar navbar-default navbar-static-top">
-  <div class="navbar-header">
-    <a class="navbar-brand" href="/"><i class="ion-ios7-pulse-strong"></i> Login Component</a>
+<nav class="navbar">
+  <a href="#" class="toggle"><i class="fa fa-reorder"></i></a>
+  <a href="#" class="brand">Login Component</a>
+  <div class="left">
+    <%= link_to 'Home', root_path, method: :get , class: "link" %>
   </div>
-  <ul class="navbar-nav">
-    <li><%= link_to 'Home', root_path %></li>
+  <div class="right">
     <% if user_signed_in? %>
-      <li><%= link_to 'Profile', edit_user_registration_path %></li>
-      <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+      <%= link_to 'Profile', edit_user_registration_path, method: :get , class: "link" %>
+      <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "link"  %>
     <% else %>
-      <li><%= link_to 'Log In', new_user_session_path %></li>
-      <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+      <%= link_to 'Log In', new_user_session_path, method: :get , class: "link"  %>
+      <%= link_to 'Sign Up', new_user_registration_path, method: :get , class: "link" %>
     <% end %>
-  </ul>
-</div>
+  </div>
+</nav>

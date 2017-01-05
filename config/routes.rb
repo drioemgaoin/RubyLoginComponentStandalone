@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   get 'home/index'
-  root 'home#index'
+
+  authenticated :user do
+    root :to => 'home#index', :as => :authenticated_root
+  end
+
+  root :to => redirect('users/login')
 
   devise_for :users, :controllers => {
     omniauth_callbacks: 'omniauth_callbacks'
