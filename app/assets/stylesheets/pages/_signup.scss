@@ -1,46 +1,19 @@
 .signup {
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  border: 0;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
-  background: #fff;
-  margin-top: 10px;
-  width: 330px;
-  padding: 10px;
+  padding: 90px 10px 10px 10px;
 
   h2 {
-    display: flex;
-    align-self: center;
+    text-align: center;
   }
 
-  div {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-
-    &#error_explanation {
-      margin-bottom: 30px;
-    }
-
-    &:not(:first-of-type) {
-      margin-top: 10px;
-    }
-
-    input {
-      height: 40px;
-    }
+  @media (min-width: 550px) {
+    width: 80%;
   }
 
-  .inline {
-    display: inline-block;
-    align-self: stretch;
+  @media (min-width: 750px) {
+    width: 50%;
   }
 
-  .input[type=submit] {
-    height: 40px;
-    width: 300px;
-    border-style: none;
-    border-radius: 3px;
+  @media (min-width: 1000px) {
+    width: 30%;
   }
 }

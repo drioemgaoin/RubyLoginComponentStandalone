@@ -23,7 +23,7 @@ module RubyMvcBoilerplate
       unless html_tag =~ /^<label/
         error_messages = instance.error_message.each.map { |message| "<li>#{instance.object.class.human_attribute_name(instance.send(:tag_id))} #{message}" }.join('</li>')
         %{
-           <div class="has-error">
+           <div class="field column has-error">
              #{html_tag}
              <span class="form-control-feedback"></span>
              <div class="help-block">

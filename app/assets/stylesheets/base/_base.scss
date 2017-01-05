@@ -99,9 +99,13 @@ ul {
     -webkit-align-items: center; /* Safari */
     align-items: center;
 
-    *:not([type=hidden]) ~ * {
+    &:not(.no-space) > *:not([type=hidden]) ~ * {
       margin-left: 10px;
       width: 100%;
+    }
+
+    &.no-space > *:not([type=hidden]) ~ * {
+      margin-left: 10px;
     }
   }
 
