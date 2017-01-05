@@ -1,18 +1,17 @@
-<div class="finish-signup">
+<div class="vcontainer finish-signup">
   <h1>Add Email</h1>
 
   <%= form_for(current_user, :as => 'user', :url => finish_signup_path(current_user), :html => { role: 'form'}) do |f| %>
     <%= render "partials/error" %>
 
-    <div>
+    <div class="field column">
       <%= f.label :email %>
-      <div>
-        <%= f.text_field :email, :autofocus => true, :value => '', class: 'form-control input-lg', placeholder: 'Example: email@me.com' %>
-        <p class="help-block">Please confirm your email address. No spam.</p>
-      </div>
+      <%= f.text_field :email, :autofocus => true, :value => '', class: 'form-control input-lg', placeholder: 'Example: email@me.com' %>
     </div>
 
-    <div>
+    <p class="help-block">Please confirm your email address. No spam.</p>
+
+    <div class="action">
       <%= f.submit 'Continue', :class => 'btn btn-primary' %>
     </div>
   <% end %>
