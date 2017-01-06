@@ -1,5 +1,5 @@
 $(document).ready ->
   $('.toggle').click ->
-    $(this).parent().toggleClass('active');
+    $(this).parent().toggleClass('active')
     false
   return
