@@ -75,9 +75,25 @@ production:
 ```
 
 ## Database creation
+RubyLoginComponent use a database to store information about the user authentication and profile.
 
+In development and test environment, I used sqlite3 because I didn't want to setup a server for that.
+In production, I used postgretsql because heroku hasn't letted me the choice.
 
-## Database initialization
+To create the database with the schema, just run the following command
+```
+$ rails db:migrate
+```
+
+If you want to reset your database and reload your current schema, you can run
+```
+$ rails db:reset db:migrate
+```
+
+If you want to destroy your db, create it and then migrate your current schema, you can run
+```
+$ rails db:drop db:create db:migrate
+```
 
 ## Unit test
 
