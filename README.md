@@ -98,7 +98,7 @@ $ rails db:drop db:create db:migrate
 ## Continuous Integration
 I setup Continuous Integration for this project by using [Travis CI](https://travis-ci.org/).
 
-[Here](https://docs.travis-ci.com/user/languages/ruby/), the documentation to setup travis-ci for a ruby project
+[Here](https://docs.travis-ci.com/user/languages/ruby/), the documentation to setup Travis-ci for Ruby.
 
 ## Unit test
 To run the tests, you just need to run
@@ -109,7 +109,9 @@ $ rails test
 I will try very soon, to had a report more readable.
 
 ## Deployment
+For the deployment, I used [heroku](https://dashboard.heroku.com/) for a simple reason; it is free and propose you the deployment and the web hosting. So what not using it 😃. Specially for developer like me creating  project and want to demonstrate in the future to people.
 
+[Here](https://devcenter.heroku.com/articles/getting-started-with-rails4) the documentation to setup heroku for rails.
 
 ## Credits
 [Plataformatec](https://github.com/plataformatec) for [Devise](https://github.com/plataformatec/devise).
