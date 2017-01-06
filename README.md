@@ -95,9 +95,21 @@ If you want to destroy your db, create it and then migrate your current schema, 
 $ rails db:drop db:create db:migrate
 ```
 
+## Continuous Integration
+I setup Continuous Integration for this project by using [Travis CI](https://travis-ci.org/).
+
+[Here](https://docs.travis-ci.com/user/languages/ruby/), the documentation to setup travis-ci for a ruby project
+
 ## Unit test
+To run the tests, you just need to run
+```
+$ rails test
+```
+
+I will try very soon, to had a report more readable.
 
 ## Deployment
+
 
 ## Credits
 [Plataformatec](https://github.com/plataformatec) for [Devise](https://github.com/plataformatec/devise).
