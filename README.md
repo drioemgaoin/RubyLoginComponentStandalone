@@ -74,6 +74,12 @@ production:
   SECRET_KEY_BASE: YOUR_SECRET_KEY_BASE
 ```
 
+For each authentication provider used by the component, you need to configure an application to get a KEY/SECRET you can then replace in the config/application.yml file.
+
+You can find the help to do it on Internet or directly on the provider developer console
+- Facebook : https://developers.facebook.com/
+- Google : https://console.developers.google.com/?hl=gb
+
 ## Database creation
 RubyLoginComponent use a database to store information about the user authentication and profile.
 
