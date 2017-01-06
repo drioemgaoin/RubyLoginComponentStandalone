@@ -115,3 +115,8 @@ For the deployment, I used [heroku](https://dashboard.heroku.com/) for a simple 
 
 ## Credits
 [Plataformatec](https://github.com/plataformatec) for [Devise](https://github.com/plataformatec/devise).
+
+## Comments
+It is my first project in Ruby/Rails so don't hesitate to send me any recommendations, suggestions about this component. I really want to have some returns about does it work well, does it match user expectation, etc.
+
+You can send me any issues you want or contact me to my github email and put the repository name in the subject.
