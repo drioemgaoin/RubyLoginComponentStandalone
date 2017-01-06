@@ -1,11 +1,11 @@
 
 [![Build Status](https://travis-ci.org/drioemgaoin/RubyLoginComponent.svg?branch=master)](https://travis-ci.org/drioemgaoin/RubyLoginComponent) [![Code Climate](https://codeclimate.com/github/drioemgaoin/RubyLoginComponent/badges/gpa.svg)](https://codeclimate.com/github/drioemgaoin/RubyLoginComponent)
 
-[Live Demo]https://fast-basin-54294.herokuapp.com/
+[Live Demo](https://fast-basin-54294.herokuapp.com/)
 ___
 RubyLoginComponent is an authentication component for Rails based on Devise.
 
-You can find more about how Devise work by taking a look on the [wiki](https://github.com/plataformatec/devise)
+You can find more about how Devise works by taking a look on the [wiki](https://github.com/plataformatec/devise)
 
 ## Starting with Rails?
 If you are building your first Rails application, we recommend you do not use Devise. Devise requires a good understanding of the Rails Framework. In such cases, we advise you to start a simple authentication system from scratch. Today, we have three resources that should help you get started:
@@ -32,8 +32,50 @@ $ bundle install
 ```
 
 ## Configuration
+RubyLoginComponent uses [gem figaro](https://github.com/laserlemon/figaro) to set the environment variables needed by Devise to work properly.
+
+The gem takes advantage of Ruby’s ability to set environment variables as well as read them. The gem reads a config/application.yml file and sets environment variables before anything else is configured in the Rails application.
+
+So, you need to create **config/application.yml** file and add it in .gitignore because it needs to be kept secret from anyone and don't be checkin in your public repository.
+
+Then copy the following configurations, one per environment you want for your project
+```
+development:
+  GMAIL_USERNAME: YOUR_ADDRESS_GMAIL
+  GMAIL_PASSWORD: YOUR_PASSWORD_GMAIL
+  FACEBOOK_SECRET: YOUR_FACEBOOK_SECRET
+  FACEBOOK_KEY: YOUR_FACEBOOK_KEY
+  GOOGLE_SECRET: YOUR_GOOGLE_SECRET
+  GOOGLE_KEY: YOUR_GOOGLE_KEY
+  TOKEN_SECRET: YOUR_TOKEN_SECRET
+  jwt_algorithm: YOUR_JWT_ALGORITHM
+  SECRET_KEY_BASE: YOUR_SECRET_KEY_BASE
+
+test:
+  MAIL_USERNAME: YOUR_ADDRESS_GMAIL
+  GMAIL_PASSWORD: YOUR_PASSWORD_GMAIL
+  FACEBOOK_SECRET: YOUR_FACEBOOK_SECRET
+  FACEBOOK_KEY: YOUR_FACEBOOK_KEY
+  GOOGLE_SECRET: YOUR_GOOGLE_SECRET
+  GOOGLE_KEY: YOUR_GOOGLE_KEY
+  TOKEN_SECRET: YOUR_TOKEN_SECRET
+  jwt_algorithm: YOUR_JWT_ALGORITHM
+  SECRET_KEY_BASE: YOUR_SECRET_KEY_BASE
+
+production:
+  MAIL_USERNAME: YOUR_ADDRESS_GMAIL
+  GMAIL_PASSWORD: YOUR_PASSWORD_GMAIL
+  FACEBOOK_SECRET: YOUR_FACEBOOK_SECRET
+  FACEBOOK_KEY: YOUR_FACEBOOK_KEY
+  GOOGLE_SECRET: YOUR_GOOGLE_SECRET
+  GOOGLE_KEY: YOUR_GOOGLE_KEY
+  TOKEN_SECRET: YOUR_TOKEN_SECRET
+  jwt_algorithm: YOUR_JWT_ALGORITHM
+  SECRET_KEY_BASE: YOUR_SECRET_KEY_BASE
+```
 
 ## Database creation
+
 
 ## Database initialization
 
