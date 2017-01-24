@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   root :to => redirect('users/login')
 
   devise_for :users, :controllers => {
-    omniauth_callbacks: 'omniauth_callbacks'
+    omniauth_callbacks: 'omniauth_callbacks',
+    registrations: 'registrations'
   }, path_names: { sign_in: "login", sign_out: "logout" }
 
   match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
