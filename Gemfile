@@ -42,6 +42,10 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'figaro'
 
+gem 'carrierwave'
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+gem 'mini_magick'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  mount_uploader :avatar, AvatarUploader
+
   TEMP_EMAIL_PREFIX = 'change@me'
   TEMP_EMAIL_REGEX = /\Achange@me/
 
@@ -8,6 +10,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook, :google_oauth2]
 
+  validates_integrity_of  :avatar
+  validates_processing_of :avatar
   validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
   validates_strength_of :password, :with => :email, on: [:new, :edit, :create]
 
@@ -34,8 +38,10 @@ class User < ApplicationRecord
         user = User.new(
           name: auth.extra.raw_info.name,
           email: email ? email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
-          password: Devise.friendly_token[0,20]
+          password: Devise.friendly_token[0,20],
+          remote_avatar_url: auth[:info][:image],
         )
+
         user.skip_confirmation! if user.respond_to?(:skip_confirmation)
         user.save!
       end
@@ -52,4 +58,9 @@ class User < ApplicationRecord
   def email_verified?
     self.email && self.email !~ TEMP_EMAIL_REGEX
   end
+
+  private
+    def avatar_size_validation
+      errors[:avatar] << "should be less than 500KB" if avatar.size > 0.5.megabytes
+    end
 end
