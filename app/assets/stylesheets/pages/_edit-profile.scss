@@ -16,4 +16,13 @@
   @media (min-width: 1000px) {
     width: 30%;
   }
+
+  .avatar {
+    img.default {
+      width: 300px;
+      height: 300px;
+    }
+
+    padding-bottom: 50px;
+  }
 }
