@@ -17,24 +17,16 @@ class ApplicationController < ActionController::Base
 
   protected
     def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:accept_invitation) do |u|
-        u.permit(:username,:validate_username, :password,:password_confirmation, :invitation_token)
-      end
-
-      devise_parameter_sanitizer.permit(:invite) do |u|
-        u.permit(:name,:comments)
-      end
-
       devise_parameter_sanitizer.permit(:sign_up) do |u|
-        u.permit(:username,:password,:password_confirmation)
+        u.permit(:email,:password,:password_confirmation)
       end
 
       devise_parameter_sanitizer.permit(:sign_in) do |u|
-        u.permit(:username,:email,:password,:password_confirmation,:phone, :validate_username, :avatar_cache, :remove_avatar, :current_password,:remember_me)
+        u.permit(:email,:password,:password_confirmation,:phone, :validate_username, :avatar_cache, :remove_avatar, :current_password,:remember_me)
       end
 
       devise_parameter_sanitizer.permit(:account_update) do |u|
-        u.permit(:username,:email,:password,:password_confirmation,:phone, :validate_username,:avatar, :avatar_cache, :remove_avatar, :current_password)
+        u.permit(:email,:password,:password_confirmation,:phone, :validate_username,:avatar, :avatar_cache, :remove_avatar, :current_password)
       end
     end
 end
