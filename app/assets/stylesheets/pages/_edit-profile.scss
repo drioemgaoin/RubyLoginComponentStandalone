@@ -20,12 +20,16 @@
   .avatar {
     position: relative;
 
+    &:hover::before {
+      cursor: pointer;
+    }
+
     &:before {
       font-family: FontAwesome;
       content: "\f044";
       position: absolute;
       font-weight: 400;
-      top: 0;
+      top: -5px;
       right: calc(100% - 435px);
       font-size: 2.5em;
       background: #fff;
@@ -36,6 +40,10 @@
 
     img {
       margin: 0 auto;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     margin-bottom: 50px;
