@@ -26,7 +26,7 @@ if Rails.env.test?
     config.storage = NullStorage
     config.enable_processing = false
   end
-  
+
 else
 
   CarrierWave.configure do |config|
@@ -36,7 +36,6 @@ else
       dropbox_oauth2_access_token:     ENV['CLOUD_STORAGE_ACCESS_KEY']
     }
     config.fog_directory  = 'RubyLoginComponent'
-    config.fog_public     = false
     config.fog_attributes = { 'Cache-Control' => "max-age=#{365.day.to_i}" }
   end
 

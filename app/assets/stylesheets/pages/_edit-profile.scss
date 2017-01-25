@@ -18,11 +18,26 @@
   }
 
   .avatar {
-    img.default {
-      width: 300px;
-      height: 300px;
+    position: relative;
+
+    &:before {
+      font-family: FontAwesome;
+      content: "\f044";
+      position: absolute;
+      font-weight: 400;
+      top: 0;
+      right: calc(100% - 435px);
+      font-size: 2.5em;
+      background: #fff;
+      color: orange;
+      padding: 5px 5px 0px 5px;
+      border-radius: 0px 0px 0px 10px;
     }
 
-    padding-bottom: 50px;
+    img {
+      margin: 0 auto;
+    }
+
+    margin-bottom: 50px;
   }
 }

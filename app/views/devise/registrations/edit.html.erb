@@ -6,17 +6,17 @@
 
     <div class="field row avatar">
       <% if resource.avatar.file.nil? %>
-        <%= image_tag(resource.avatar_url, class: 'default') %>
+        <%= image_tag(resource.avatar_url, class: 'default', onClick: "$(this).parent().find('input[type=file]').click();") %>
       <% else %>
-        <%= image_tag(resource.avatar_url(:medium)) %>
+        <%= image_tag(resource.avatar_url(:medium), onClick: "$(this).parent().find('input[type=file]').click();") %>
       <% end %>
-      <%= f.file_field :avatar, autofocus: true %>
+      <%= f.file_field :avatar, onchange: "$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\\\|/]/).pop());", style: "display: none;" %>
       <%= f.hidden_field :avatar_cache %>
     </div>
 
     <div class="field column">
       <%= f.label :email %>
-      <%= f.email_field :email %>
+      <%= f.email_field :email, autofocus: true %>
     </div>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
