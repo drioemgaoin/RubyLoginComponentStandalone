@@ -35,6 +35,7 @@ class User < ApplicationRecord
 
       # Create the user if it's a new registration
       if user.nil?
+        puts auth[:info][:image]
         user = User.new(
           name: auth.extra.raw_info.name,
           email: email ? email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",

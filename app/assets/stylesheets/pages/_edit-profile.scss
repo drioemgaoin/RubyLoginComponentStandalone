@@ -24,6 +24,10 @@
       cursor: pointer;
     }
 
+    .default {
+      height: 300px;
+    }
+
     &:before {
       font-family: FontAwesome;
       content: "\f044";
