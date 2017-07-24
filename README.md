@@ -1,7 +1,7 @@
 
 [![Build Status](https://travis-ci.org/drioemgaoin/RubyLoginComponent.svg?branch=master)](https://travis-ci.org/drioemgaoin/RubyLoginComponent) [![Code Climate](https://codeclimate.com/github/drioemgaoin/RubyLoginComponent/badges/gpa.svg)](https://codeclimate.com/github/drioemgaoin/RubyLoginComponent)
 
-[Live Demo](https://fast-basin-54294.herokuapp.com/)
+[Live Demo](https://ruby-login-component.herokuapp.com/)
 ___
 RubyLoginComponent is an authentication component for Rails based on Devise.
 
